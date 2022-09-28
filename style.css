@@ -39,7 +39,7 @@ footer {
   
 #gridContainer {
     display: grid;
-    padding: 1px;
+    padding: 10px;
     width: 800px;
     height: 800px;
     grid-gap: 1px;
@@ -51,4 +51,8 @@ footer {
     border: 1px solid limegreen;
     background-color: white;
     text-align: center;
+}
+
+.grid-item-painted {
+    background-color: black;
 }
