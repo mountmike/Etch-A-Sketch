@@ -2,7 +2,9 @@ const gridContainer = document.getElementById("gridContainer");
 const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
+const colorBtn = document.getElementById('customColorPicker')
 let res = 64;
+let currentColor = '#000000'
 
 
 
@@ -29,7 +31,6 @@ function makeRows(rows, cols) {
 
 makeRows(res, res);
 
-let currentColor = 'black'
 
 
 function paint() {
@@ -56,3 +57,8 @@ clearBtn.addEventListener('click', function() {
 
 
 paint();
+
+// Color selector
+colorBtn.addEventListener('click', function() {
+    currentColor = customColorPicker.value
+});

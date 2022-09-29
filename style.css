@@ -76,7 +76,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 #clear {
@@ -204,3 +204,8 @@ input[type=range] {
   }
   input[type=range]:focus::-ms-fill-upper {
     background: gold;
+  }
+
+  .colorpick {
+    visibility: shown;
+  }
