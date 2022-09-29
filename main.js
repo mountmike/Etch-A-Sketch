@@ -62,3 +62,4 @@ paint();
 colorBtn.addEventListener('click', function() {
     currentColor = customColorPicker.value
 });
+

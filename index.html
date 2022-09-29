@@ -16,14 +16,14 @@
         <div id="gridContainer">
         </div>
         <div class="controls">
-            <div class="colorpick">
-                <input id="customColorPicker" type="color" name="currentColor" value="#000000"/>
-            </div>
-            
             <button id="clear">CLEAR</button>
             <div class="slider">
                 <input id="gridRes" type="range" min="1" max="64" value="64" oninput="rangeValue.innerText = this.value">
                 <p id="rangeValue">Resolution</p>
+            </div>
+            <div class="colorpick">
+                <label for="customColorPicker">Select a colour:</label>
+                <input id="customColorPicker" type="color" name="currentColor" value="#000000"/>
             </div>
         </div>
     </main>

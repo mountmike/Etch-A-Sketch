@@ -209,3 +209,22 @@ input[type=range] {
   .colorpick {
     visibility: shown;
   }
+
+  #customColorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    border: none;
+    cursor: pointer;
+  }
+  #customColorPicker::-webkit-color-swatch {
+    border-radius: 50%;
+    border: 7px solid #000000;
+  }
+  #customColorPicker::-moz-color-swatch {
+    border-radius: 50%;
+    border: 7px solid #000000;
+  }
