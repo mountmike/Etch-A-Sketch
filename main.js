@@ -67,12 +67,3 @@ clearBtn.addEventListener('click', function() {
 colorBtn.addEventListener('input', (e) => {
     currentColor = e.target.value;
   });
-colorBtn.addEventListener('mouseup', function() {
-    setTimeout(()=>{
-  
-        // toggle the type attribute to close the picker!
-        colorBtn.setAttribute('type','text');
-        colorBtn.setAttribute('type','color');
-        
-      }, 1000);
-});
