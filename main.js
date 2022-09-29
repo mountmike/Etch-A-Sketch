@@ -2,8 +2,10 @@ const gridContainer = document.getElementById("gridContainer");
 const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
+const colorPicker = document.getElementsByClassName('colorpick');
 const colorBtn = document.getElementById('customColorPicker')
 let res = 64;
+let backgroundColor = '#FFFFFF'
 let currentColor = '#000000'
 
 
@@ -32,14 +34,17 @@ function makeRows(rows, cols) {
 makeRows(res, res);
 
 
+// Paint function
 
 function paint() {
     for (const cell of cells) {
-        cell.addEventListener('mouseover', function () {
+        cell.addEventListener('mouseover', function() {
             cell.style.backgroundColor = currentColor;
         });
-    }
+    } 
 }
+
+paint();
 
 // Clear function
 
@@ -56,10 +61,18 @@ clearBtn.addEventListener('click', function() {
 });
 
 
-paint();
+
 
 // Color selector
-colorBtn.addEventListener('click', function() {
-    currentColor = customColorPicker.value
+colorBtn.addEventListener('input', (e) => {
+    currentColor = e.target.value;
+  });
+colorBtn.addEventListener('mouseup', function() {
+    setTimeout(()=>{
+  
+        // toggle the type attribute to close the picker!
+        colorBtn.setAttribute('type','text');
+        colorBtn.setAttribute('type','color');
+        
+      }, 1000);
 });
-
