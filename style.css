@@ -2,8 +2,7 @@
     --grid-cols: 1;
     --grid-rows: 1;
   }
-
-html, body {
+body {
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -33,11 +32,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     background-color: red;
     border-radius: 20px;
-    width: 100%;
-    height: 100%;
+    width: 700px;
+    height: 700px;
+    margin: 10px;
 }
 
 footer {
@@ -45,11 +45,11 @@ footer {
 }
   
 #gridContainer {
-    margin: 100px;
+    margin: 10px;
     display: grid;
     padding: 10px;
-    width: 800px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
     background-color: white;
     grid-template-rows: repeat(var(--grid-rows), 1fr);

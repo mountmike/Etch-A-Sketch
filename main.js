@@ -2,14 +2,14 @@ const gridContainer = document.getElementById("gridContainer");
 const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
-const colorPicker = document.getElementsByClassName('colorpick');
-const colorBtn = document.getElementById('customColorPicker')
+const colorBtn = document.getElementById('customColorPicker');
+
 let res = 64;
 let backgroundColor = '#FFFFFF'
 let currentColor = '#000000'
 
 
-
+// Resolution slider function
 gridResSlider.addEventListener("click", function() { 
     res = gridResSlider.value;
     clearGrid(gridContainer);
@@ -20,7 +20,7 @@ gridResSlider.addEventListener("click", function() {
 
 
 
-
+// setup grid function
 function makeRows(rows, cols) {
   gridContainer.style.setProperty('--grid-rows', rows);
   gridContainer.style.setProperty('--grid-cols', cols);
@@ -36,17 +36,39 @@ makeRows(res, res);
 
 // Paint function
 
-function paint() {
-    for (const cell of cells) {
-        cell.addEventListener('mouseover', function() {
-            cell.style.backgroundColor = currentColor;
-        });
-    } 
+
+//this function paints the grid
+
+
+function paintGrid(elem, color){    
+    if(elem.buttons == 1){
+        if(elem.target.classList == 'grid-item'){
+            let square = elem.target;    
+            square.style.backgroundColor = currentColor;
+        }  
+    }else{
+        //Exit condition if mouse is not clicked.
+        return;
+    }
 }
 
-paint();
+gridContainer.addEventListener('mousedown', event =>{ 
+    paintGridEvent = paintGrid(event, currentColor);
+    if(event.buttons == 1){        
+        window.addEventListener('mouseover', (e) => {
+            if(currentColor == 'random'){
+                paintGrid(e, getRandomRgb());
+            }else{
+                paintGrid(e, currentColor);
+            }            
+        });
+    }
+});
+
+
 
 // Clear function
+
 
 const clearGrid = function(parent) {
     while (parent.firstChild) {
@@ -64,6 +86,14 @@ clearBtn.addEventListener('click', function() {
 
 
 // Color selector
-colorBtn.addEventListener('input', (e) => {
-    currentColor = e.target.value;
-  });
+function setCurrentColor(newColor) {
+    currentColor = newColor
+  }
+  
+
+colorBtn.oninput = (e) => setCurrentColor(e.target.value);
+
+
+
+
+
