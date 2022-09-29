@@ -15,10 +15,13 @@
         <h1>Etch A Sketch</h1>
         <div id="gridContainer">
         </div>
-        <div class="slider">
-            <input id="gridRes" type="range" min="1" max="64" value="64" oninput="rangeValue.innerText = this.value">
-            <p id="rangeValue">Resolution</p>
+        <div class="controls">
+            <button id="clear">CLEAR</button>
+            <div class="slider">
+                <input id="gridRes" type="range" min="1" max="64" value="64" oninput="rangeValue.innerText = this.value">
+                <p id="rangeValue">Resolution</p>
             </div>
+        </div>
     </main>
     <footer>
     </footer>

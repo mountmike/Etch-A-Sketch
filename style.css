@@ -72,6 +72,17 @@ footer {
     mask-image: url("grit.png");
   }
 
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#clear {
+    margin-top: -90px;
+}
+
 .slider {
     display: flex;
     justify-content: center;
