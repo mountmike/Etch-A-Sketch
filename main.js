@@ -1,4 +1,17 @@
 const gridContainer = document.getElementById("gridContainer");
+const gridResSlider = document.getElementById("gridRes")
+let resX = 64;
+let resY = 80;
+
+
+gridResSlider.addEventListener("change", function() { 
+    resX = gridResSlider.value;
+    resY = resX * 1.25;
+    clearGrid(gridContainer);
+});
+
+
+
 
 function makeRows(rows, cols) {
   gridContainer.style.setProperty('--grid-rows', rows);
@@ -10,7 +23,7 @@ function makeRows(rows, cols) {
   };
 };
 
-makeRows(64, 64);
+makeRows(resX, resY);
 
 let currentColor = 'black'
 
@@ -20,4 +33,12 @@ for (const cell of cells) {
     cell.addEventListener('mouseover', function o () {
         cell.style.backgroundColor = currentColor;
     });
+}
+
+// Clear function
+
+const clearGrid = function(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }

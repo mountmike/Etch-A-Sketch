@@ -10,11 +10,15 @@
 </head>
 <body>
     <header>
-        <h1>ETCH-A-SKETCH</h1>
     </header>
     <main>
+        <h1>Etch A Sketch</h1>
         <div id="gridContainer">
         </div>
+        <div class="slider">
+            <input id="gridRes" type="range" min="1" max="64" value="64" oninput="rangeValue.innerText = this.value">
+            <p id="rangeValue">Resolution</p>
+            </div>
     </main>
     <footer>
     </footer>
