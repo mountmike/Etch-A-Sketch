@@ -6,25 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <script src="main.js" defer></script>
+     <!--Draggable API for rounded controllers-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
     <title>Etch-a-Sketch</title>
 </head>
 <body>
     <header>
     </header>
     <main>
-        <h1>Etch A Sketch</h1>
+        <h1 class="shiny">Etch A Sketch<sup>®</sup></h1>
         <div id="gridContainer">
         </div>
         <div class="controls">
-            <button id="clear">CLEAR</button>
+            <div id="left-controller">
+                <div id="subcontainer-left">
+                    <div id="res-controller" class="round-controller outer-sh">
+                        <div class="marker"></div>
+                    </div>
+                </div>
+            </div>
             <div class="slider">
-                <input id="gridRes" type="range" min="1" max="64" value="64" oninput="rangeValue.innerText = this.value">
-                <p id="rangeValue">Resolution</p>
+                <input id="gridRes" type="range" min="1" max="64" value="64" >
             </div>
-            <div class="colorpick">
-                <label for="customColorPicker">Select a colour:</label>
-                <input id="customColorPicker" type="color" name="currentColor" value="#000000" data-jscolor="{}"/>
+            <div id="right-controller">
+                <div id="subcontainer-right">
+                    <div id="color-controller" class="round-controller outer-sh">
+                        <div class="marker"></div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </main>
     <footer>

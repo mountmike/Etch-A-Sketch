@@ -4,9 +4,27 @@ const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
 const colorBtn = document.getElementById('customColorPicker');
 
-let res = 64;
-let backgroundColor = '#FFFFFF'
-let currentColor = '#000000'
+let res = 32;
+let backgroundColor = '#FFFFFF';
+let currentColor = '#000000';
+
+// Resolution controller knob
+const resController = Draggable.create("#res-controller",{
+    type: "rotation",
+    bounds:{minRotation:-270, maxRotation: -180},
+    onDragEnd: () => {
+        colorController[0].endRotation < 45 ? selectedColor = 'black' : selectedColor = 'random';
+    }
+});
+
+// Color controller knob
+const colorController = Draggable.create("#color-controller",{
+    type: "rotation",
+    bounds:{minRotation:0, maxRotation: 90},
+    onDragEnd: () => {
+        colorController[0].endRotation < 45 ? selectedColor = 'black' : selectedColor = 'random';
+    }
+});
 
 
 // Resolution slider function
