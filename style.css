@@ -1,11 +1,23 @@
+/*
+* {
+  border: 1px white solid;
+}
+*/
+
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
   }
+
+@font-face {
+  font-family: Rondo;
+  src: url(fonts/rondo.ttf)
+}
+
 body {
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: lightgrey;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
@@ -22,10 +34,22 @@ header {
 
 h1 {
     text-align: center;
-    font-size: 3em;
-    font-family:cursive;
-    margin-bottom: -80px;
-
+    font-family: rondo;
+    margin: 0;
+    font-size: 4em;
+    font-weight: bold;
+    background-image: linear-gradient(
+    to top,
+    #462523 0,
+    #cb9b51 22%, 
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #462523 100%
+    );
+    color:transparent;
+    -webkit-background-clip:text;
 }
 
 main {
@@ -38,22 +62,32 @@ main {
     width: 700px;
     height: 700px;
     margin: 10px;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
 }
 
 footer {
     display: flex;
 }
+
+sup {
+  font-size: .4em;
+}
   
 #gridContainer {
     margin: 10px;
     display: grid;
-    padding: 10px;
+    padding: 5px;
     width: 500px;
     height: 500px;
     border-radius: 10px;
     background-color: white;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(232, 232, 232, 0.71);
+    -moz-box-shadow: 2px 2px 3px px rgba(255, 255, 255, 0.71);
+    
 }
 
 .grid-item {
@@ -74,9 +108,9 @@ footer {
 
 .controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    width: 100%;
 }
 
 #clear {
@@ -85,13 +119,16 @@ footer {
 
 .slider {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .slider input[type="range"] {
     text-align: center;
-    width: 420px;
-    height: 10px;
+    width: 90%;
+    height: auto;
 }
 
 /* STYLING RESOLUTION SLIDER */
@@ -159,13 +196,13 @@ input[type=range] {
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: gold;
+    background: #FFFFEA;
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
   
   input[type=range]:focus::-webkit-slider-runnable-track {
-    background: gold;
+    background: #FFFFEA;
   }
   
   input[type=range]::-moz-range-track {
@@ -173,7 +210,7 @@ input[type=range] {
     height: 8.4px;
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-    background: gold;
+    background: #FFFFEA;
     border-radius: 1.3px;
     border: 0.2px solid #010101;
   }
@@ -188,7 +225,7 @@ input[type=range] {
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: gold;
+    background: #FFFFEA;
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -207,7 +244,7 @@ input[type=range] {
   }
 
   .colorpick {
-    visibility: shown;
+    visibility: hidden;
   }
 
   #customColorPicker {
@@ -227,4 +264,46 @@ input[type=range] {
   #customColorPicker::-moz-color-swatch {
     border-radius: 50%;
     border: 7px solid #000000;
+  }
+
+
+#subcontainer-right{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+}
+
+#subcontainer-left{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+}
+
+  .round-controller{
+    background-color: #FFFFEA;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;  
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+  }     
+
+  .marker {
+    background:#E90418;
+    position: relative;
+    height:10px;
+    right:0px;
+    top:45px;
+    width:10px;  
+  }
+
+  #color-controller{
+    margin: 10px 10px 10px 10px;
+  }
+
+  #res-controller{
+    margin: 10px 10px 10px 10px;
   }
