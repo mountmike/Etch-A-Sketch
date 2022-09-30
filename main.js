@@ -22,7 +22,7 @@ const colorController = Draggable.create("#color-controller",{
     type: "rotation",
     bounds:{minRotation:0, maxRotation: 90},
     onDragEnd: () => {
-        colorController[0].endRotation < 45 ? selectedColor = 'black' : selectedColor = 'random';
+        colorController[0].endRotation < 45 ? currentColor = '#000000' : selectedColor = 'random';
     }
 });
 
@@ -55,7 +55,7 @@ makeRows(res, res);
 // Paint function
 
 
-//this function paints the grid
+// this function paints the grid
 
 
 function paintGrid(elem, color){    

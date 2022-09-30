@@ -32,26 +32,6 @@ header {
     align-items: center;
 } 
 
-h1 {
-    text-align: center;
-    font-family: rondo;
-    margin: 0;
-    font-size: 4em;
-    font-weight: bold;
-    background-image: linear-gradient(
-    to top,
-    #462523 0,
-    #cb9b51 22%, 
-    #f6e27a 45%,
-    #f6f2c0 50%,
-    #f6e27a 55%,
-    #cb9b51 78%,
-    #462523 100%
-    );
-    color:transparent;
-    -webkit-background-clip:text;
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -73,6 +53,26 @@ footer {
 
 sup {
   font-size: .4em;
+}
+
+h1 {
+  text-align: center;
+  font-family: rondo;
+  margin: 0;
+  font-size: 4em;
+  font-weight: bold;
+  background-image: linear-gradient(
+  to top,
+  #462523 0,
+  #cb9b51 22%, 
+  #f6e27a 45%,
+  #f6f2c0 50%,
+  #f6e27a 55%,
+  #cb9b51 78%,
+  #462523 100%
+  );
+  color:transparent;
+  -webkit-background-clip:text;
 }
   
 #gridContainer {
@@ -96,25 +96,11 @@ sup {
     text-align: center;
 }
 
-.grid-item-painted {
-    background-color: black;
-}
-
-
-.grit {
-    -webkit-mask-image: url("grit.png");
-    mask-image: url("grit.png");
-  }
-
 .controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-#clear {
-    margin-top: -90px;
 }
 
 .slider {
@@ -160,13 +146,16 @@ input[type=range] {
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: 1px solid #000000;
-    height: 36px;
+    height: 40px;
     width: 16px;
     border-radius: 3px;
-    background: #ffffff;
+    background: #FFFFEA;
     cursor: pointer;
-    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    margin-top: -18px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
   }
   
   /* All the same stuff for Firefox */
@@ -176,8 +165,11 @@ input[type=range] {
     height: 36px;
     width: 16px;
     border-radius: 3px;
-    background: #ffffff;
+    background: #FFFFEA;
     cursor: pointer;
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
   }
   
   /* All the same stuff for IE */
@@ -187,7 +179,7 @@ input[type=range] {
     height: 36px;
     width: 16px;
     border-radius: 3px;
-    background: #ffffff;
+    background: #FFFFEA;
     cursor: pointer;
   }
 
@@ -197,8 +189,11 @@ input[type=range] {
     cursor: pointer;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
     background: #FFFFEA;
-    border-radius: 1.3px;
+    border-radius: 2px;
     border: 0.2px solid #010101;
+    -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    -moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.71);
   }
   
   input[type=range]:focus::-webkit-slider-runnable-track {
