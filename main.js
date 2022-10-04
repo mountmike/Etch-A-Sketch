@@ -5,15 +5,22 @@ const clearBtn = document.getElementById('clear');
 const colorBtn = document.getElementById('customColorPicker');
 
 let res = 32;
-let backgroundColor = '#FFFFFF';
-let currentColor = '#000000';
+let backgroundColor = 'rgb(255, 255, 255)';
+let currentColor = 'rgb(0, 0, 0)';
 
-// Resolution controller knob
-const resController = Draggable.create("#res-controller",{
+let colorMultiplyer = 0;
+
+// Color controller knob
+const colorKnob = Draggable.create("#colorKnob",{
     type: "rotation",
-    bounds:{minRotation:-270, maxRotation: -180},
+    bounds:{minRotation:0, maxRotation: 180},
     onDragEnd: () => {
-        colorController[0].endRotation < 45 ? selectedColor = 'black' : selectedColor = 'random';
+        colorMultiplyer = colorKnob[0].endX;
+        let RGB1 = colorMultiplyer * 3;
+        let RGB2 = colorMultiplyer * 1.3;
+        let RGB3 = colorMultiplyer * .2;
+        currentColor = `rgb(${RGB1}, ${RGB2}, ${RGB3})`
+
     }
 });
 
@@ -54,18 +61,13 @@ makeRows(res, res);
 
 // Paint function
 
-
-// this function paints the grid
-
-
 function paintGrid(elem, color){    
     if(elem.buttons == 1){
         if(elem.target.classList == 'grid-item'){
             let square = elem.target;    
             square.style.backgroundColor = currentColor;
         }  
-    }else{
-        //Exit condition if mouse is not clicked.
+    } else {
         return;
     }
 }

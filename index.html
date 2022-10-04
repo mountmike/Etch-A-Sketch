@@ -17,32 +17,37 @@
 <body>
     <header>
     </header>
-    <main>
-        
-        <h1 class="shiny">Etch A Sketch<sup>®</sup></h1>
-        <div id="gridContainer">
+    <div class="main-contain">
+        <div class="sideblock" id="controlPanel">
         </div>
-        <div class="controls"> 
-            <div id="left-controller">
-                <div id="subcontainer-left">
-                    <div id="res-controller" class="round-controller outer-sh">
-                        <div class="marker"></div>
+        <main>
+            <h1 class="shiny">Etch A Sketch<sup>®</sup></h1>
+            <div id="gridContainer">
+            </div>
+            <div class="controls"> 
+                <div id="left-controller">
+                    <div id="subcontainer-left">
+                        <div id="colorKnob" class="round-controller outer-sh">
+                            <div class="marker"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="slider">
-                <input id="gridRes" type="range" min="1" max="64" value="64" >
-            </div>
-            <div id="right-controller">
-                <div id="subcontainer-right">
-                    <div id="color-controller" class="round-controller outer-sh">
-                        <div class="marker"></div>
+                <div class="slider">
+                    <input id="gridRes" type="range" min="1" max="64" value="64" >
+                </div>
+                <div id="right-controller">
+                    <div id="subcontainer-right">
+                        <div id="color-controller" class="round-controller outer-sh">
+                            <div class="marker"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+        </main>
+        <div class="sideblock">
         </div>
-    </main>
+    </div>
     <footer>
         <p>Copyright © 
         <script>

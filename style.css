@@ -33,6 +33,28 @@ header {
     align-items: center;
 } 
 
+.main-contain {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  gap: 100px;
+}
+
+.sideblock {
+  min-width: 300px;
+  height: 700px;
+}
+
+#controlPanel {
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+  box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+  border-radius: 20px;
+  visibility: hidden;
+
+}
+
+
 main {
     display: flex;
     flex-direction: column;
@@ -55,6 +77,8 @@ main {
     -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
     -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
     box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.71);
+    justify-self: center;
+    align-self: center;
 }
 
 footer {
@@ -314,7 +338,7 @@ input[type=range] {
     margin: 10px 10px 10px 10px;
   }
 
-  #res-controller{
+  #colorKnob{
     margin: 10px 10px 10px 10px;
   }
 
