@@ -322,15 +322,6 @@ input[type=range] {
 
   @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
-body{
-    font-family: 'Exo', sans-serif;
-}
-
 
 .context {
     width: 100%;
@@ -346,9 +337,9 @@ body{
 }
 
 .fa-github {
-  color: var(--primary-dark);
-  font-size: 24px;
+  font-size: 30px;
   transition: transform 0.3s ease-in-out;
+  color: black;
 }
 
 .fa-github:hover {
