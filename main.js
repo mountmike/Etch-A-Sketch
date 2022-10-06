@@ -3,6 +3,7 @@ const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
 const colorBtn = document.getElementById('colorGrab');
+const eraserBtn = document.getElementById('eraser');
 
 let res = 32;
 let currentColor = '#000000';
@@ -17,6 +18,8 @@ gridResSlider.addEventListener("click", function() {
     paint();
     
 });
+
+
 
 
 
@@ -60,8 +63,6 @@ gridContainer.addEventListener('mousedown', event =>{
     }
 });
 
-
-
 // Clear function
 
 
@@ -86,6 +87,12 @@ function setCurrentColor(newColor) {
   
 
 colorBtn.oninput = (e) => setCurrentColor(e.target.value);
+
+function eraser() {
+    currentColor = '#FFFFFF';
+}
+
+eraserBtn.addEventListener('click', eraser())
 
 
 
