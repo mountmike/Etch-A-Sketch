@@ -19,11 +19,11 @@
     </header>
     <div class="main-contain">
         <div class="sideblock" id="controlPanel">
-            <input type="color">
+            <input type="color" id="colorGrab" value="#000000">
             <button>Color Mode</button>
-            <button>Rainbox Mode</button>
+            <button>Rainbow Mode</button>
             <button>Eraser</button>
-            <button>Clear</button>
+            <button id="clear">Clear</button>
         </div>
         <main>
             <h1 class="shiny">Etch A Sketch<sup>®</sup></h1>
@@ -38,7 +38,8 @@
                     </div>
                 </div>
                 <div class="slider">
-                    <input id="gridRes" type="range" min="1" max="64" value="64" >
+                    <input id="gridRes" type="range" min="1" max="32" value="32" >
+                    <p id="etch">GRID SIZE</p>
                 </div>
                 <div id="right-controller">
                     <div id="subcontainer-right">
@@ -58,8 +59,9 @@
         <script>
             document.write(new Date().getFullYear())
          </script>
-        <a href="https://github.com/mountmike" target="_blank">Mount Mike
-        <i class='fa fa-github' style='font-size:30px'></i></a>
+         Mount Mike 
+        <a href="https://github.com/mountmike" target="_blank">
+        <i class='fa fa-github' style='font-size:1.5em'></i></a>
         </p>
     </footer>
     

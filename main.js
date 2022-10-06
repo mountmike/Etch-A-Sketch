@@ -2,36 +2,11 @@ const gridContainer = document.getElementById("gridContainer");
 const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
 const clearBtn = document.getElementById('clear');
-const colorBtn = document.getElementById('customColorPicker');
+const colorBtn = document.getElementById('colorGrab');
 
 let res = 32;
-let backgroundColor = 'rgb(255, 255, 255)';
-let currentColor = 'rgb(0, 0, 0)';
+let currentColor = '#000000';
 
-let colorMultiplyer = 0;
-
-// Color controller knob
-const colorKnob = Draggable.create("#colorKnob",{
-    type: "rotation",
-    bounds:{minRotation:0, maxRotation: 180},
-    onDragEnd: () => {
-        colorMultiplyer = colorKnob[0].endX;
-        let RGB1 = colorMultiplyer * 1.4;
-        let RGB2 = colorMultiplyer ;
-        let RGB3 =  0;
-        currentColor = `rgb(${RGB1}, ${RGB2}, ${RGB3})`
-
-    }
-});
-
-// Color controller knob
-const colorController = Draggable.create("#color-controller",{
-    type: "rotation",
-    bounds:{minRotation:0, maxRotation: 90},
-    onDragEnd: () => {
-        colorController[0].endRotation < 45 ? currentColor = '#000000' : selectedColor = 'random';
-    }
-});
 
 
 // Resolution slider function
@@ -99,7 +74,6 @@ const clearGrid = function(parent) {
 clearBtn.addEventListener('click', function() {
     clearGrid(gridContainer);
     makeRows(res, res);
-    paint();
 });
 
 
@@ -117,3 +91,22 @@ colorBtn.oninput = (e) => setCurrentColor(e.target.value);
 
 
 
+
+
+// Left knob
+const leftKnob = Draggable.create("#colorKnob",{
+    type: "rotation",
+    bounds:{minRotation:-180, maxRotation: -270},
+    onDragEnd: () => {
+
+    }
+});
+
+// Right kob
+const rightKnob = Draggable.create("#color-controller",{
+    type: "rotation",
+    bounds:{minRotation:0, maxRotation: 90},
+    onDragEnd: () => {
+        
+    }
+});
