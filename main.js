@@ -16,9 +16,9 @@ const colorKnob = Draggable.create("#colorKnob",{
     bounds:{minRotation:0, maxRotation: 180},
     onDragEnd: () => {
         colorMultiplyer = colorKnob[0].endX;
-        let RGB1 = colorMultiplyer * 3;
-        let RGB2 = colorMultiplyer * 1.3;
-        let RGB3 = colorMultiplyer * .2;
+        let RGB1 = colorMultiplyer * 1.4;
+        let RGB2 = colorMultiplyer ;
+        let RGB3 =  0;
         currentColor = `rgb(${RGB1}, ${RGB2}, ${RGB3})`
 
     }
