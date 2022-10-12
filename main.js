@@ -49,7 +49,6 @@ gridResSlider.addEventListener("click", function() {
     res = gridResSlider.value;
     clearGrid(gridContainer);
     makeRows(res, res);
-    paint();
     
 });
 
@@ -66,6 +65,14 @@ function makeRows(rows, cols) {
 
 makeRows(res, res);
 
+// Rainbow color generator
+function getRandomRgb() {
+    var num = Math.round(0xffffff * Math.random());
+    var r = num >> 16;
+    var g = num >> 8 & 255;
+    var b = num & 255;
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
 
 // Paint function
 function paintGrid(elem, color){    
@@ -83,8 +90,9 @@ gridContainer.addEventListener('mousedown', event =>{
     paintGridEvent = paintGrid(event, currentColor,);
     if(event.buttons == 1){        
         window.addEventListener('mouseover', (e) => {
-            if(currentMode == 'random'){
-                paintGrid(e, getRandomRgb());
+            if(currentMode == 'rainbow'){
+                currentColor = getRandomRgb();
+                paintGrid(e, currentColor);
             } else if (currentMode == 'eraser') {
                 currentColor = backgroundColor
                 paintGrid(e, currentColor);
@@ -114,8 +122,10 @@ clearBtn.addEventListener('click', function() {
 
 // Color Grabber
 function setCurrentColor(newColor) {
-    currentColor = newColor
+    currentColor = newColor;
   }
 
 colorGrab.oninput = (e) => setCurrentColor(e.target.value);
+colorGrab.oninput = (e) => setCurrentMode('color');
 
+setCurrentMode('color');
