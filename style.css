@@ -65,6 +65,7 @@ header {
     margin: 0;
     font-size: 1.5em;
     font-weight: bold;
+    background: #FFFFEA;
 }
 
 .sideblock button:hover {
@@ -374,10 +375,13 @@ input[type=range] {
 
   #color-controller{
     margin: 10px 10px 10px 10px;
+    transform: rotate(90deg);
   }
 
   #colorKnob{
     margin: 10px 10px 10px 10px;
+    transform: rotate(90deg);
+
   }
 
 

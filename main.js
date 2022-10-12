@@ -1,14 +1,41 @@
+let res = 32;
+let currentColor = '#000000';
+let currentMode = "color";
+
 const gridContainer = document.getElementById("gridContainer");
 const cells = gridContainer.getElementsByClassName('grid-item')
 const gridResSlider = document.getElementById("gridRes")
-const clearBtn = document.getElementById('clear');
-const colorBtn = document.getElementById('colorGrab');
-const eraserBtn = document.getElementById('eraser');
+const clearBtn = document.getElementById('clearBtn');
+const colorGrab = document.getElementById('colorGrab');
+const eraserBtn = document.getElementById('eraserBtn');
+const colorBtn = document.getElementById('colorModeBtn');
+const rainbowBtn = document.getElementById('rainbowModeBtn');
 
-let res = 32;
-let currentColor = '#000000';
+// Mode selectaaah
+function setCurrentMode(newMode) {
+    activateButton(newMode)
+    currentMode = newMode
+  }
 
+// Activate modes / classes
 
+function activateButton(newMode) {
+    if (currentMode === 'rainbow') {
+      rainbowBtn.classList.remove('active')
+    } else if (currentMode === 'color') {
+      colorBtn.classList.remove('active')
+    } else if (currentMode === 'eraser') {
+      eraserBtn.classList.remove('active')
+    }
+  
+    if (newMode === 'rainbow') {
+      rainbowBtn.classList.add('active')
+    } else if (newMode === 'color') {
+      colorBtn.classList.add('active')
+    } else if (newMode === 'eraser') {
+      eraserBtn.classList.add('active')
+    }
+  }
 
 // Resolution slider function
 gridResSlider.addEventListener("click", function() { 
@@ -18,10 +45,6 @@ gridResSlider.addEventListener("click", function() {
     paint();
     
 });
-
-
-
-
 
 // setup grid function
 function makeRows(rows, cols) {
@@ -80,40 +103,13 @@ clearBtn.addEventListener('click', function() {
 
 
 
-// Color selector
+// Color Grabber
 function setCurrentColor(newColor) {
     currentColor = newColor
   }
-  
 
-colorBtn.oninput = (e) => setCurrentColor(e.target.value);
+colorGrab.oninput = (e) => setCurrentColor(e.target.value);
 
-function eraser() {
-    currentColor = '#FFFFFF';
-}
+// Set color Mode
 
-eraserBtn.addEventListener('click', eraser())
-
-
-
-
-
-
-
-// Left knob
-const leftKnob = Draggable.create("#colorKnob",{
-    type: "rotation",
-    bounds:{minRotation:-180, maxRotation: -270},
-    onDragEnd: () => {
-
-    }
-});
-
-// Right kob
-const rightKnob = Draggable.create("#color-controller",{
-    type: "rotation",
-    bounds:{minRotation:0, maxRotation: 90},
-    onDragEnd: () => {
-        
-    }
-});
+colorBtn.onclick = () => setCurrentMode('color')
