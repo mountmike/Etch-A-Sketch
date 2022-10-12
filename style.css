@@ -118,7 +118,6 @@ main {
 footer {
     display: flex;
     justify-content: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
     font: 1.5em sans-serif;
