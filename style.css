@@ -63,7 +63,7 @@ header {
     text-align: center;
     font-family: sans-serif;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     background: #FFFFEA;
 }
@@ -77,13 +77,20 @@ header {
   #DB0107 60%,
   #C40002
   );
-  color: #FAF9F6;  
 
 }
 
-.sideblock button:active {
+.sideblock button.active {
   transition: all .2s ease-in-out;
-  transform: scale(1.1); 
+  background-image: linear-gradient(
+    to right,
+  #DB0107,
+  #CF0120 ,
+  #D20003 40%,
+  #DB0107 60%,
+  #C40002
+  );
+  color: #FAF9F6;  
 }
 
 .sideblock input {
@@ -91,7 +98,6 @@ header {
     height: 100px;
     border-radius: 10px;
 }
-
 
 main {
     display: flex;

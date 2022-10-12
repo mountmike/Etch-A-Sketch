@@ -1,5 +1,6 @@
 let res = 32;
 let currentColor = '#000000';
+let backgroundColor = '#FFFFFF';
 let currentMode = "color";
 
 const gridContainer = document.getElementById("gridContainer");
@@ -11,13 +12,18 @@ const eraserBtn = document.getElementById('eraserBtn');
 const colorBtn = document.getElementById('colorModeBtn');
 const rainbowBtn = document.getElementById('rainbowModeBtn');
 
+// Set color Mode
+colorBtn.onclick = () => setCurrentMode('color');
+rainbowBtn.onclick = () => setCurrentMode('rainbow');
+eraserBtn.onclick = () => setCurrentMode('eraser');
+
 // Mode selectaaah
 function setCurrentMode(newMode) {
     activateButton(newMode)
     currentMode = newMode
   }
 
-// Activate modes / classes
+// Activate modes &  classes
 
 function activateButton(newMode) {
     if (currentMode === 'rainbow') {
@@ -32,6 +38,7 @@ function activateButton(newMode) {
       rainbowBtn.classList.add('active')
     } else if (newMode === 'color') {
       colorBtn.classList.add('active')
+      currentColor = colorGrab.value;
     } else if (newMode === 'eraser') {
       eraserBtn.classList.add('active')
     }
@@ -61,7 +68,6 @@ makeRows(res, res);
 
 
 // Paint function
-
 function paintGrid(elem, color){    
     if(elem.buttons == 1){
         if(elem.target.classList == 'grid-item'){
@@ -74,12 +80,15 @@ function paintGrid(elem, color){
 }
 
 gridContainer.addEventListener('mousedown', event =>{ 
-    paintGridEvent = paintGrid(event, currentColor);
+    paintGridEvent = paintGrid(event, currentColor,);
     if(event.buttons == 1){        
         window.addEventListener('mouseover', (e) => {
-            if(currentColor == 'random'){
+            if(currentMode == 'random'){
                 paintGrid(e, getRandomRgb());
-            }else{
+            } else if (currentMode == 'eraser') {
+                currentColor = backgroundColor
+                paintGrid(e, currentColor);
+            } else {
                 paintGrid(e, currentColor);
             }            
         });
@@ -110,6 +119,3 @@ function setCurrentColor(newColor) {
 
 colorGrab.oninput = (e) => setCurrentColor(e.target.value);
 
-// Set color Mode
-
-colorBtn.onclick = () => setCurrentMode('color')
